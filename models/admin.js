@@ -11,7 +11,13 @@ const AdminSchema = new Schema({
     type: String,
     require: [true, "Password is required"],
   },
-  admin: true,
+  admin: {
+    type: Boolean,
+    default: true,
+  },
+  token: {
+    type: String,
+  },
 });
 
 module.exports = mongoose.model("Admin", AdminSchema);
