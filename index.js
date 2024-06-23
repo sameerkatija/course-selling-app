@@ -25,6 +25,8 @@ app.get("/", (req, res) => {
 app.use("/admin", admin);
 app.use("/user", users);
 
-app.listen(process.env.PORT, () => {
-  console.log(`Server is listening on http://127.0.0.1:${process.env.PORT}`);
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Server is listening on http://127.0.0.1:${PORT}`);
 });
